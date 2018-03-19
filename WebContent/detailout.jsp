@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body style="background-image: url(img/ww.jpg);">
 <form method="post" id="form" >
-<center> <h1><font color="red">员工信息</font></h1></center><hr />
+<center> <h1><font color="red">出售房源信息</font></h1></center><hr />
 		<div>
 			<table class="table table-hover" >
 				
@@ -32,42 +32,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td></td>
 					</tr>
 					<tr class="warning">
-						<td><strong> 姓名：</strong>&emsp;<span><c:out value="${o_name}"/></span></td>
-						<td><strong> 家庭地址：</strong>&emsp;<span><c:out value="${o_address}"/></span></td>
+						<td><strong> 房源地址：</strong>&emsp;<span><c:out value="${o_name}"/></span></td>
+						<td><strong>总价：</strong>&emsp;<span><c:out value="${o_address}"/></span></td>
 						
 					</tr>
 					
 					<tr class="danger">
-						<td><strong>年龄：</strong>&emsp;<span><c:out value="${o_age}"/></span></td>
-						<td><strong>QQ：</strong>&emsp;<span><c:out value="${o_qq}"/></span></td>
+						<td><strong>房龄：</strong>&emsp;<span><c:out value="${o_age}"/></span></td>
+						<td><strong>面积：</strong>&emsp;<span><c:out value="${o_qq}"/></span></td>
 						
 					</tr>
 					<tr class="info">
-						<td><strong>性别：</strong>&emsp;<span><c:out value="${o_sex}"/></span></td>
-						<td><strong>部门：</strong>&emsp;<span><c:out value="${o_dept}"/></span></td>
+						<td><strong>房型：</strong>&emsp;<span><c:out value="${o_sex}"/></span></td>
+						<td><strong>单价：</strong>&emsp;<span><c:out value="${o_dept}"/></span></td>
 						
 					</tr>
 					
 					<tr class="success">
-						<td><strong>邮箱：</strong>&emsp;<span><c:out value="${o_email}"/></span></td>
-						<td><strong>职位：</strong>&emsp;<span><c:out value="${o_duty}"/></span></td>
+						<td><strong>朝向：</strong>&emsp;<span><c:out value="${o_email}"/></span></td>
+						<td><strong>业主姓名：</strong>&emsp;<span><c:out value="${o_duty}"/></span></td>
 						
 					</tr>
 					<tr class="danger">
-						<td><strong>民族:</strong>&emsp;<span><c:out value="${o_nation}"/></span></td>
-						<td><strong>工资:</strong>&emsp;<span><c:out value="${o_salary}"/></span></td>
+						<td><strong>经纪人电话：</strong>&emsp;<span><c:out value="${o_nation}"/></span></td>
+						<td><strong>业主电话：</strong>&emsp;<span><c:out value="${o_salary}"/></span></td>
 						
 					</tr>
 						<tr class="success">
-						<td><strong>电话：</strong>&emsp;<span><c:out value="${o_phone}"/></span></td>
-						<td><strong>身份证：</strong>&emsp;<span><c:out value="${o_card}"/></span></td>
+						<td><strong>楼层：</strong>&emsp;<span><c:out value="${o_phone}"/></span></td>
+						<td><strong>经济人：</strong>&emsp;<span><c:out value="${o_card}"/></span></td>
 						
 					</tr>
 					
-					<tr class="warning">
-						<td><strong> 外派公司：</strong>&emsp;<span><c:out value="${o_buss}"/></span></td>
-						<td><strong>所在项目：</strong>&emsp;<span><c:out value="${o_project}"/></span></td>
-					</tr>
+					
 												
 					<tr><td colspan="2" style="text-align:center"><button class="btn btn-default btn-lg" ><a href="welcome.jsp">返回</a></button></td></tr>
 			</table>

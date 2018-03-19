@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body style="background-image: url(img/ww.jpg);">
 <form method="post" id="form" >
-<center> <h1><font color="red">员工信息</font></h1></center><hr />
+<center> <h1><font color="red">出租房源信息</font></h1></center><hr />
 		<div>
 			<table class="table table-hover" >
 				
