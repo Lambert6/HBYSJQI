@@ -86,9 +86,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="form-group has-success has-feedback">
 				<label class="control-label col-sm-3" for="inputSuccess3">客户学历：</label>
 				<div class="col-sm-6">
-					<input type="text" name="a_address" value="<c:out value="${a_address}"/>" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-					<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-					<span id="inputSuccess3Status" class="sr-only">(success)</span>
+					<select name="a_address" class="form-control" id="inputError1">
+					<option value="本科">本科</option>
+					<option value="研究生">研究生</option>
+					<option value="博士">博士</option>
+					<option value="专科">专科</option>
+					<option value="中专">中专</option>
+					<option value="高中">高中</option>
+					<option value="初中及以下">初中及以下</option>
+					</select>
 				</div>
 			</div>
 			
@@ -97,9 +103,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="form-group has-success has-feedback">
 				<label class="control-label col-sm-3" for="inputSuccess3">户型：</label>
 				<div class="col-sm-6">
-					<input type="text" name="a_qq" value="<c:out value="${a_qq}"/>" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-					<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-					<span id="inputSuccess3Status" class="sr-only">(success)</span>
+					<select name="a_qq" class="form-control" id="inputError1">
+					<option value="1-1-1">1-1-1</option>
+					<option value="2-1-1<H>">2-1-1</option>
+					<option value="3-1-1">3-1-1</option>
+					<option value="3-2-1">3-2-1</option>
+					<option value="3-2-2">3-2-2</option>
+					<option value="独单">独单</option>
+					<option value="偏单">偏单</option>
+					<option value="中单">中单</option>
+					</select>
 				</div>
 			</div>
 			
@@ -133,9 +146,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="form-group has-success has-feedback">
 				<label class="control-label col-sm-3" for="inputSuccess3">意愿度：</label>
 				<div class="col-sm-6">
-					<input type="text" name="a_card" value="<c:out value="${a_card}"/>" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-					<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-					<span id="inputSuccess3Status" class="sr-only">(success)</span>
+					<select name="a_card" class="form-control" id="inputError1">
+					<option value="非常强烈">非常强烈</option>
+					<option value="强烈">强烈</option>
+					<option value="一般">一般</option>
+					<option value="较低">较低</option>
+					</select>
+				
 				</div>
 			</div>
 			

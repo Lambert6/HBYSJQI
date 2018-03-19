@@ -17,7 +17,7 @@
 	function add() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("add");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "addemp.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -27,7 +27,7 @@
 	function select() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("select");
-		if (position.value == "管理员" || position.value == "人事专员") {
+		if (position.value == "经理" || position.value == "经纪人"|| position.value == "超级管理员") {
 			add.href = "welcome.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -36,7 +36,7 @@
 	function selectproject() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("selectproject");
-		if (position.value == "管理员" || position.value == "人事专员") {
+		if (position.value == "经理" || position.value == "经纪人"|| position.value == "超级管理员") {
 			add.href = "indirect.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -45,7 +45,7 @@
 	function selectass() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("selectass");
-		if (position.value == "管理员" || position.value == "人事专员") {
+		if (position.value == "经理" || position.value == "经纪人"|| position.value == "超级管理员") {
 			add.href = "indirect3.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -54,7 +54,7 @@
 	function selectdic() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("selectdic");
-		if (position.value == "管理员") {
+		if ( position.value == "超级管理员") {
 			add.href = "indirect4.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -63,7 +63,7 @@
 	function addproject() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("addproject");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "addtra.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -72,7 +72,7 @@
 	function addass() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("addass");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "addass.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -81,7 +81,7 @@
 	function allot() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("allot");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "indirect1.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -90,7 +90,7 @@
 	function selectprogress() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("selectprogress");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "addout.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -99,7 +99,7 @@
 	function submitprogress() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("submitprogress");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "indirect2.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -108,7 +108,7 @@
 	function selectassess() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("selectassess");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "indirect3.jsp";
 		} else {
 			alert("您没有此权限！");
@@ -117,7 +117,7 @@
 	function insertassess() {
 		var position = document.getElementById("position");
 		var add = document.getElementById("insertassess");
-		if (position.value == "管理员") {
+		if (position.value == "经理"|| position.value == "超级管理员") {
 			add.href = "indirect3.jsp";
 		} else {
 			alert("您没有此权限！");

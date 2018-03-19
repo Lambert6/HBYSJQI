@@ -134,7 +134,7 @@
 	function myupdate(row) {
 		document.getElementById("updateId").value = row.cells[0].innerHTML;
 		var position = document.getElementById("position");
-		if (position.value == "管理员") {
+		if (position.value=="经理"||position.value=="超级管理员") {
 			var updateform = document.getElementById("updateform");
 			updateform.action = "getOut.action";
 			updateform.submit();
@@ -146,7 +146,7 @@
 	function mydelete(row) {
 		document.getElementById("deleteId").value = row.cells[0].innerHTML;
 		var position = document.getElementById("position");
-		if (position.value == "管理员") {
+		if (position.value=="经理"||position.value=="超级管理员") {
 			var myform = document.getElementById("deleteform");
 			myform.action = "deleteOut.action";
 			myform.submit();
@@ -158,7 +158,7 @@
 	function mydetails(row) {
 		document.getElementById("lookId").value = row.cells[0].innerHTML;
 		var position = document.getElementById("position");
-		if (position.value == "管理员") {
+		if (position.value=="经理"||position.value=="超级管理员") {
 			var myform = document.getElementById("form");
 			myform.action = "getOutDetails.action";
 			myform.submit();

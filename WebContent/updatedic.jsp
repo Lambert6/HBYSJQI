@@ -59,8 +59,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="col-sm-6">
 					<select name="position" value="<c:out value="${position}"/>" class="form-control" id="inputError1">
 					<option value=""></option>
-					<option value="管理员">管理员</option>
-					<option value="人事专员">人事专员</option>
+					<option value="经理">经理</option>
+					<option value="经纪人">经纪人</option>
 					</select>
 				</div>
 			</div>

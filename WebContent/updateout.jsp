@@ -49,9 +49,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="form-group has-error has-feedback">
 				<label class="control-label col-sm-3" for="inputSuccess3">房型：</label>
 				<div class="col-sm-6">
-					<input type="text" name="o_sex" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
-					<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-					<span id="inputSuccess3Status" class="sr-only">(success)</span>
+					<select name="o_sex" class="form-control" id="inputError1">
+					<option value="1-1-1">1-1-1</option>
+					<option value="2-1-1<H>">2-1-1</option>
+					<option value="3-1-1">3-1-1</option>
+					<option value="3-2-1">3-2-1</option>
+					<option value="3-2-2">3-2-2</option>
+					<option value="独单">独单</option>
+					<option value="偏单">偏单</option>
+					<option value="中单">中单</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group has-error has-feedback">

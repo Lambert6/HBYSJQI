@@ -34,15 +34,15 @@
 						<th>年龄</th>
 						<th>邮箱</th>
 						<th>电话</th>
-						<th>住址</th>
-						<th>名族</th>
-						<th>QQ</th>
-						<th>部门</th>
-						<th>职位</th>
-						<th>工资</th>
-						<th>身份证</th>
-						<th>毕业学校</th>
-						<th>所在项目</th>
+						<th>客户学历</th>
+						<th>是否贷款</th>
+						<th>户型</th>
+						<th>预算价格</th>
+						<th>最大需求</th>
+						<th>位置</th>
+						<th>意愿度</th>
+						<th>维护经纪人</th>
+						<th>带看次数</th>
 						<th>基本操作</th>
 					</tr>
 				</thead>
@@ -113,7 +113,7 @@
 	function mydelete(row){
 		document.getElementById("deleteId").value = row.cells[0].innerHTML;
 		var position=document.getElementById("position");
-		if(position.value=="管理员"){
+		if(position.value=="经理"||position.value=="超级管理员"){
 			var myform=document.getElementById("deleteform");
 			myform.action="deleteAss.action";
 			myform.submit();  
@@ -125,7 +125,7 @@
 	function mydetails(row){
 		document.getElementById("lookId").value = row.cells[0].innerHTML;
 		var position=document.getElementById("position");
-		if(position.value=="管理员"){
+		if(position.value=="经理"||position.value=="超级管理员"){
 			var myform=document.getElementById("form");
 			myform.action="getAssDetails.action";
 			myform.submit();
