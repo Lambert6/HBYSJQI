@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.share.outsource.DAO.OutDAO">
+	<!-- 得到Emp表 -->
+	<select id="getOutList" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT * from outsource limit #{pages},9
+	</select>
+	
+	<select id="selectCount" resultType="int">
+	   select count(*) from outsource
+	</select>
+	
+	<!-- 得到一行Emp信息表 -->
+	<select id="getOut" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT*FROM outsource where o_id = #{iId,jdbcType=INTEGER} 
+	</select>
+	
+	<!-- 条件查询 -->
+	<select id="retout" resultType="java.util.HashMap" parameterType="java.util.Map">
+		select * from outsource
+		
+		<where>
+		1=1
+				<if test="o_id !=null and o_id !=''">
+                 and   o_id = #{o_id,jdbcType=VARCHAR} 
+                </if>
+                <if test="o_name !=null and o_name !=''">
+                 and   o_name = #{o_name,jdbcType=VARCHAR} 
+                </if>      
+                 <if test="o_age !=null and o_age !=''">
+                  and  o_age = #{o_age,jdbcType=VARCHAR} 
+                </if> 
+               <if test="o_sex !=null and o_sex  !=''">
+                   and o_sex = #{o_sex,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_email !=null and o_email !=''">
+                  and  o_email = #{o_email,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_phone !=null and o_phone !=''">
+                  and o_phone  = #{o_phone,jdbcType=VARCHAR} 
+                </if> 
+               <if test="o_address !=null and o_address !=''">
+                 and o_address   = #{o_address,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_nation !=null and o_nation !=''">
+               and  o_nation    = #{o_nation,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_qq !=null and o_qq !=''">
+                and   o_qq  = #{o_qq,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_dept !=null and o_dept !=''">
+                  and  o_dept = #{o_dept,jdbcType=VARCHAR} 
+                </if> 
+                <if test="o_duty !=null and o_duty !=''">
+               and   o_duty   = #{o_duty,jdbcType=VARCHAR} 
+                </if>
+               <if test="o_salary !=null and o_salary !=''">
+                and o_salary    = #{o_salary,jdbcType=VARCHAR}
+                </if> 
+                <if test="o_card !=null and o_card !=''">
+                and  o_card   = #{o_card,jdbcType=VARCHAR} 
+                </if> 
+               <if test="o_buss !=null and o_buss !=''">
+                 and   o_buss = #{o_buss,jdbcType=VARCHAR} 
+                </if> 
+               <if test="o_project !=null and o_project !=''">
+                  and  o_project = #{o_project,jdbcType=VARCHAR} 
+                </if> 
+        </where>
+        
+	</select>
+	
+	<!-- 增加一行emp信息表 -->
+  	<insert id="addOut" parameterType="java.util.Map" >
+    	insert into outsource
+   		<trim prefix="(" suffix=")" suffixOverrides="," >
+
+				o_name,
+			<if test="null != o_sex and !&quot;&quot;.equals(o_sex.trim())">  
+                o_sex,
+            </if>          
+           
+            <if test="null != o_phone and !&quot;&quot;.equals(o_phone.trim())">  
+                o_phone,
+            </if>
+            <if test="null != o_address and !&quot;&quot;.equals(o_address.trim())">  
+                o_address,
+            </if>
+           <if test="null != o_email and !&quot;&quot;.equals(o_email.trim())">  
+                o_email,
+            </if>
+             <if test="null != o_age and !&quot;&quot;.equals(o_age.trim())">  
+                o_age,
+            </if>
+			   <if test="null != o_nation and !&quot;&quot;.equals(o_nation.trim())">  
+                o_nation,
+            </if> 
+           
+             <if test="null != o_qq and !&quot;&quot;.equals(o_qq.trim())">  
+                o_qq,
+            </if>
+            <if test="null != o_dept and !&quot;&quot;.equals(o_dept.trim())">  
+                o_dept,
+            </if>
+            <if test="null != o_duty and !&quot;&quot;.equals(o_duty.trim())">  
+                o_duty,
+            </if>
+            <if test="null != o_salary and !&quot;&quot;.equals(o_salary.trim())">  
+                o_salary,
+            </if>
+            <if test="null != o_card and !&quot;&quot;.equals(o_card.trim())">  
+                o_card,
+            </if>
+            <if test="null != o_buss and !&quot;&quot;.equals(o_buss.trim())">  
+                o_buss,
+            </if>
+            <if test="null != o_project and !&quot;&quot;.equals(o_project.trim())">  
+                o_project
+            </if>
+            
+            
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+				<if test="null != o_name and !&quot;&quot;.equals(o_name.trim())">  
+                #{o_name,jdbcType=VARCHAR},
+            </if> 
+			<if test="null != o_sex and !&quot;&quot;.equals(o_sex.trim())">  
+                 #{o_sex,jdbcType=VARCHAR},
+            </if>          
+           
+            <if test="null != o_phone and !&quot;&quot;.equals(o_phone.trim())">  
+                 #{o_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="null != o_address and !&quot;&quot;.equals(o_address.trim())">  
+                 #{o_address,jdbcType=VARCHAR},
+            </if>
+           <if test="null != o_email and !&quot;&quot;.equals(o_email.trim())">  
+                 #{o_email,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != o_nation and !&quot;&quot;.equals(o_nation.trim())">  
+                 #{o_nation,jdbcType=VARCHAR},
+            </if> 
+           
+             <if test="null != o_age and !&quot;&quot;.equals(o_age.trim())">  
+                #{o_age,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_qq and !&quot;&quot;.equals(o_qq.trim())">  
+                #{o_qq,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_dept and !&quot;&quot;.equals(o_dept.trim())">  
+                #{o_dept,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_duty and !&quot;&quot;.equals(o_duty.trim())">  
+                #{o_duty,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_salary and !&quot;&quot;.equals(o_salary.trim())">  
+                #{o_salary,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_card and !&quot;&quot;.equals(o_card.trim())">  
+                #{o_card,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_buss and !&quot;&quot;.equals(o_buss.trim())">  
+                #{o_buss,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_project and !&quot;&quot;.equals(o_project.trim())">  
+                #{o_project,jdbcType=VARCHAR}
+            </if>
+		</trim>
+	</insert>
+	
+	<!-- 删除一行emp信息表 -->
+	<update id="deleteOut" parameterType="java.util.Map">
+ 		DELETE From outsource where o_id = #{deleteId,jdbcType=INTEGER}
+ 	</update>
+ 	
+ 	<!-- 修改一行emp信息表 -->
+ 	<update id="updateOut" parameterType="java.util.Map" >
+    	update outsource
+	    <set>
+			
+				o_name=#{o_name,jdbcType=VARCHAR},
+			
+			<if test="null != o_sex and !&quot;&quot;.equals(o_sex.trim())">  
+                o_sex=#{o_sex,jdbcType=VARCHAR},
+            </if>          
+            
+            <if test="null != o_phone and !&quot;&quot;.equals(o_phone.trim())">  
+                o_phone=#{o_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="null != o_address and !&quot;&quot;.equals(o_address.trim())">  
+               o_address= #{o_address,jdbcType=VARCHAR},
+            </if>
+          <if test="null != o_email and !&quot;&quot;.equals(o_email.trim())">  
+                 o_email= #{o_email,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != o_nation and !&quot;&quot;.equals(o_nation.trim())">  
+                o_nation= #{o_nation,jdbcType=VARCHAR},
+            </if> 
+			   
+            
+            <if test="null != o_age and !&quot;&quot;.equals(o_age.trim())">  
+               o_age=#{o_age,jdbcType=VARCHAR},
+            </if>
+            
+            
+             <if test="null != o_qq and !&quot;&quot;.equals(o_qq.trim())">  
+               o_qq=#{o_qq,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_dept and !&quot;&quot;.equals(o_dept.trim())">  
+               o_dept=#{o_dept,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_duty and !&quot;&quot;.equals(o_duty.trim())">  
+               o_duty=#{o_duty,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_salary and !&quot;&quot;.equals(o_salary.trim())">  
+               o_salary=#{o_salary,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_card and !&quot;&quot;.equals(o_card.trim())">  
+               o_card=#{o_card,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_buss and !&quot;&quot;.equals(o_buss.trim())">  
+               o_buss=#{o_buss,jdbcType=VARCHAR},
+            </if>
+             <if test="null != o_project and !&quot;&quot;.equals(o_project.trim())">  
+               o_project=#{o_project,jdbcType=VARCHAR}
+            </if>
+	    </set>
+	    where o_id = #{updateId,jdbcType=INTEGER}
+	    <!--  
+	    <choose>
+		    <when test="updateId instanceof Integer">
+	 		where iId = #{updateId,jdbcType=INTEGER}
+	 		</when>
+	 		<otherwise>
+	 		where iId in 
+		   	<foreach collection="updateId" item="item" open="(" separator="," close=")">
+		 	#{item}
+		 	</foreach>
+		 	</otherwise>
+	 	</choose>
+	 	-->
+  	</update>
+ 	
+	
+</mapper>

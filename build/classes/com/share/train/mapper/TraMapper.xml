@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.share.train.DAO.TraDAO">
+	<!-- 得到Emp表 -->
+	<select id="getTraList" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT * from train limit #{pages},9
+	</select>
+	<select id="selectCount" resultType="int">
+	   select count(*) from outsource
+	</select>
+	<!-- 得到一行Emp信息表 -->
+	<select id="getTra" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT*FROM train where t_id = #{iId,jdbcType=INTEGER} 
+	</select>
+	
+	<!-- 条件查询 -->
+	<select id="rettrain" resultType="java.util.HashMap" parameterType="java.util.Map">
+		select * from train
+		
+		<where>
+		1=1
+				<if test="t_id !=null and t_id !=''">
+                 and   t_id = #{t_id,jdbcType=VARCHAR} 
+                </if>
+                <if test="t_name !=null and t_name !=''">
+                 and   t_name = #{t_name,jdbcType=VARCHAR} 
+                </if>      
+                 <if test="c_age !=null and c_age !=''">
+                  and  t_name = #{t_name,jdbcType=VARCHAR} 
+                </if> 
+               <if test="t_sex !=null and t_sex  !=''">
+                   and t_sex = #{t_sex,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_email !=null and t_email !=''">
+                  and  t_email = #{t_email,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_phone !=null and t_phone !=''">
+                  and t_phone  = #{t_phone,jdbcType=VARCHAR} 
+                </if> 
+               <if test="t_address !=null and t_address !=''">
+                 and t_address   = #{t_address,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_nation !=null and t_nation !=''">
+               and  t_nation    = #{t_nation,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_qq !=null and t_qq !=''">
+                and   t_qq  = #{t_qq,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_dept !=null and t_dept !=''">
+                  and  t_dept = #{t_dept,jdbcType=VARCHAR} 
+                </if> 
+                <if test="t_duty !=null and t_duty !=''">
+               and   t_duty   = #{t_duty,jdbcType=VARCHAR} 
+                </if>
+               <if test="t_salary !=null and t_salary !=''">
+                and t_salary    = #{t_salary,jdbcType=VARCHAR}
+                </if> 
+                <if test="t_card !=null and t_card !=''">
+                and  t_card   = #{t_card,jdbcType=VARCHAR} 
+                </if> 
+               <if test="t_bank !=null and t_bank !=''">
+                 and   t_bank = #{t_bank,jdbcType=VARCHAR} 
+                </if> 
+               <if test="t_bankid !=null and t_bankid !=''">
+                  and  t_bankid = #{t_bankid,jdbcType=VARCHAR} 
+                </if> 
+        </where>
+        
+	</select>
+	
+	<!-- 增加一行emp信息表 -->
+  	<insert id="addTra" parameterType="java.util.Map" >
+    	insert into train
+   		<trim prefix="(" suffix=")" suffixOverrides="," >
+
+				t_name,
+			<if test="null != t_sex and !&quot;&quot;.equals(t_sex.trim())">  
+                t_sex,
+            </if>          
+            <if test="null != t_age and !&quot;&quot;.equals(t_age.trim())">  
+                t_age,
+            </if>
+             <if test="null != t_email and !&quot;&quot;.equals(t_email.trim())">  
+                t_email,
+            </if>
+            <if test="null != t_phone and !&quot;&quot;.equals(t_phone.trim())">  
+                t_phone,
+            </if>
+            <if test="null != t_address and !&quot;&quot;.equals(t_address.trim())">  
+                t_address,
+            </if>
+          
+			   <if test="null != t_nation and !&quot;&quot;.equals(t_nation.trim())">  
+                t_nation,
+            </if> 
+           
+            
+            
+            
+            <if test="null != t_qq and !&quot;&quot;.equals(t_qq.trim())">  
+                t_qq,
+            </if>          
+           
+            <if test="null != t_dept and !&quot;&quot;.equals(t_dept.trim())">  
+                t_dept,
+            </if>
+            <if test="null != t_duty and !&quot;&quot;.equals(t_duty.trim())">  
+                t_duty,
+            </if>
+           <if test="null != t_salary and !&quot;&quot;.equals(t_salary.trim())">  
+               t_salary,
+            </if>
+			   <if test="null != t_card and !&quot;&quot;.equals(t_card.trim())">  
+                t_card,
+            </if> 
+           
+             <if test="null != t_bank and !&quot;&quot;.equals(t_bank.trim())">  
+                t_bank,
+            </if>
+             <if test="null != t_bankid and !&quot;&quot;.equals(t_bankid.trim())">  
+                t_bankid
+            </if>
+            
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="null != t_name and !&quot;&quot;.equals(t_name.trim())">
+				#{t_name,jdbcType=VARCHAR},
+			</if>
+			<if test="null != t_sex and !&quot;&quot;.equals(t_sex.trim())">  
+                #{t_sex,jdbcType=VARCHAR},
+            </if>          
+           
+            <if test="null != t_age and !&quot;&quot;.equals(t_age.trim())">  
+               #{t_age,jdbcType=VARCHAR},
+            </if>
+            <if test="null != t_email and !&quot;&quot;.equals(t_email.trim())">  
+               #{t_email,jdbcType=VARCHAR},
+            </if>
+           <if test="null != t_phone and !&quot;&quot;.equals(t_phone.trim())">  
+                #{t_phone,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != t_address and !&quot;&quot;.equals(t_address.trim())">  
+               #{t_address,jdbcType=VARCHAR},
+            </if> 
+           
+             <if test="null != t_nation and !&quot;&quot;.equals(t_nation.trim())">  
+               #{t_nation,jdbcType=VARCHAR},
+            </if>
+		
+			
+			<if test="null != t_qq and !&quot;&quot;.equals(t_qq.trim())">
+				#{t_qq,jdbcType=VARCHAR},
+			</if>
+			<if test="null != t_dept and !&quot;&quot;.equals(t_dept.trim())">  
+                #{t_dept,jdbcType=VARCHAR},
+            </if>          
+           
+            <if test="null != t_duty and !&quot;&quot;.equals(t_duty.trim())">  
+               #{t_duty,jdbcType=VARCHAR},
+            </if>
+            <if test="null != t_salary and !&quot;&quot;.equals(t_salary.trim())">  
+               #{t_salary,jdbcType=VARCHAR},
+            </if>
+           <if test="null != t_card and !&quot;&quot;.equals(t_card.trim())">  
+                #{t_card,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != t_bank and !&quot;&quot;.equals(t_bank.trim())">  
+               #{t_bank,jdbcType=VARCHAR},
+            </if> 
+           
+             <if test="null != t_bankid and !&quot;&quot;.equals(t_bankid.trim())">  
+               #{t_bankid,jdbcType=VARCHAR}
+            </if>
+		
+		
+		
+		</trim>
+	</insert>
+	
+	<!-- 删除一行emp信息表 -->
+	<update id="deleteTra" parameterType="java.util.Map">
+ 		DELETE From train where t_id = #{deleteId,jdbcType=INTEGER}
+ 	</update>
+ 	
+ 	<!-- 修改一行emp信息表 -->
+ 	<update id="updateTra" parameterType="java.util.Map" >
+    	update train
+	    <set>
+			
+				 t_name=#{t_name,jdbcType=VARCHAR},
+			
+			<if test="null != t_sex and !&quot;&quot;.equals(t_sex.trim())">  
+                 t_sex = #{t_sex,jdbcType=VARCHAR},
+            </if>          
+           
+            <if test="null != t_age and !&quot;&quot;.equals(t_age.trim())">  
+               t_age = #{t_age,jdbcType=VARCHAR},
+            </if>
+            <if test="null != t_email and !&quot;&quot;.equals(t_email.trim())">  
+               t_email = #{t_email,jdbcType=VARCHAR},
+            </if>
+           <if test="null != t_phone and !&quot;&quot;.equals(t_phone.trim())">  
+                t_phone = #{t_phone,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != t_address and !&quot;&quot;.equals(t_address.trim())">  
+              t_address = #{t_address,jdbcType=VARCHAR},
+            </if> 
+           
+             <if test="null != t_nation and !&quot;&quot;.equals(t_nation.trim())">  
+               t_nation = #{t_nation,jdbcType=VARCHAR},
+            </if>
+		
+			
+			<if test="null != t_qq and !&quot;&quot;.equals(t_qq.trim())">
+				t_qq = #{t_qq,jdbcType=VARCHAR},
+			</if>
+			<if test="null != t_dept and !&quot;&quot;.equals(t_dept.trim())">  
+                t_dept = #{t_dept,jdbcType=VARCHAR},
+            </if>          
+           
+            <if test="null != t_duty and !&quot;&quot;.equals(t_duty.trim())">  
+               t_duty = #{t_duty,jdbcType=VARCHAR},
+            </if>
+            <if test="null != t_salary and !&quot;&quot;.equals(t_salary.trim())">  
+               t_salary = #{t_salary,jdbcType=VARCHAR},
+            </if>
+           <if test="null != t_card and !&quot;&quot;.equals(t_card.trim())">  
+                t_card = #{t_card,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != t_bank and !&quot;&quot;.equals(t_bank.trim())">  
+               t_bank = #{t_bank,jdbcType=VARCHAR},
+            </if> 
+           
+             <if test="null != t_bankid and !&quot;&quot;.equals(t_bankid.trim())">  
+              t_bankid = #{t_bankid,jdbcType=VARCHAR}
+            </if>
+		
+	    </set>
+	    where t_id = #{updateId,jdbcType=INTEGER}
+	    <!--  
+	    <choose>
+		    <when test="updateId instanceof Integer">
+	 		where iId = #{updateId,jdbcType=INTEGER}
+	 		</when>
+	 		<otherwise>
+	 		where iId in 
+		   	<foreach collection="updateId" item="item" open="(" separator="," close=")">
+		 	#{item}
+		 	</foreach>
+		 	</otherwise>
+	 	</choose>
+	 	-->
+  	</update>
+ 	
+	
+</mapper>

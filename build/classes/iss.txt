@@ -1,0 +1,2 @@
+http://localhost:8080/iss_resource/
+http://localhost:8080/iss_resource/login.action?name=*&pwd=*

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.share.emp.DAO.EmpDAO">
+	
+	
+	
+	<!-- 得到Emp表 -->
+	<select id="getEmpList" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT * from common limit #{pages},9
+	</select>
+	<select id="selectCount" resultType="int">
+	   select count(*) from common
+	</select>
+	
+	<!-- 得到一行Emp信息表 -->
+	<select id="getRow" resultType="java.util.HashMap" parameterType="java.util.Map">
+		SELECT*FROM common where c_id = #{iId,jdbcType=INTEGER} 
+	</select>
+	
+		<!-- 条件查询 -->
+	<select id="retcommon" resultType="java.util.HashMap" parameterType="java.util.Map">
+		select * from common
+		
+		<where>
+		1=1
+				<if test="c_id !=null and c_id !=''">
+                 and   c_id = #{c_id,jdbcType=VARCHAR} 
+                </if>
+                <if test="c_name !=null and c_name !=''">
+                 and   c_name = #{c_name,jdbcType=VARCHAR} 
+                </if>      
+                 <if test="c_age !=null and c_age !=''">
+                  and  c_age = #{c_age,jdbcType=VARCHAR} 
+                </if> 
+               <if test="c_sex !=null and c_sex  !=''">
+                   and c_sex = #{c_sex,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_email !=null and c_email !=''">
+                  and  c_email = #{c_email,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_phone !=null and c_phone !=''">
+                  and c_phone  = #{c_phone,jdbcType=VARCHAR} 
+                </if> 
+               <if test="c_address !=null and c_address !=''">
+                 and c_address   = #{c_address,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_nation !=null and c_nation !=''">
+               and  c_nation    = #{c_nation,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_qq !=null and c_qq !=''">
+                and   c_qq  = #{c_qq,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_dept !=null and c_dept !=''">
+                  and  c_dept = #{c_dept,jdbcType=VARCHAR} 
+                </if> 
+                <if test="c_duty !=null and c_duty !=''">
+               and   c_duty   = #{c_duty,jdbcType=VARCHAR} 
+                </if>
+               <if test="c_salary !=null and c_salary !=''">
+                and c_salary    = #{c_salary,jdbcType=VARCHAR}
+                </if> 
+                <if test="c_card !=null and c_card !=''">
+                and  c_card   = #{c_card,jdbcType=VARCHAR} 
+                </if> 
+               <if test="c_bank !=null and c_bank !=''">
+                 and   c_bank = #{c_bank,jdbcType=VARCHAR} 
+                </if> 
+               <if test="c_bankid !=null and c_bankid !=''">
+                  and  c_bankid = #{c_bankid,jdbcType=VARCHAR} 
+                </if> 
+        </where>
+        
+	</select>
+	
+	<!-- 增加一行emp信息表 -->
+  	<insert id="addRow" parameterType="java.util.Map" >
+    	insert into common
+   		<trim prefix="(" suffix=")" suffixOverrides="," >
+
+				c_name,
+			<if test="null != c_sex and !&quot;&quot;.equals(c_sex.trim())">  
+                c_sex,
+            </if>          
+           
+            <if test="null != c_phone and !&quot;&quot;.equals(c_phone.trim())">  
+                c_phone,
+            </if>
+            <if test="null != c_address and !&quot;&quot;.equals(c_address.trim())">  
+                c_address,
+            </if>
+           <if test="null != c_email and !&quot;&quot;.equals(c_email.trim())">  
+                c_email,
+            </if>
+			   <if test="null != c_nation and !&quot;&quot;.equals(c_nation.trim())">  
+                c_nation,
+            </if> 
+           
+             <if test="null != c_age and !&quot;&quot;.equals(c_age.trim())">  
+                c_age,
+            </if>
+             <if test="null != c_qq and !&quot;&quot;.equals(c_qq.trim())">  
+                c_qq,
+            </if>
+             <if test="null != c_dept and !&quot;&quot;.equals(c_dept.trim())">  
+                c_dept,
+            </if>
+             <if test="null != c_duty and !&quot;&quot;.equals(c_duty.trim())">  
+                c_duty,
+            </if>
+             <if test="null != c_salary and !&quot;&quot;.equals(c_salary.trim())">  
+                c_salary,
+            </if>
+             <if test="null != c_card and !&quot;&quot;.equals(c_card.trim())">  
+                c_card,
+            </if>
+             <if test="null != c_bank and !&quot;&quot;.equals(c_bank.trim())">  
+                c_bank,
+            </if>
+             <if test="null != c_bankid and !&quot;&quot;.equals(c_bankid.trim())">  
+                c_bankid
+            </if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="null != c_name and !&quot;&quot;.equals(c_name.trim())">
+				#{c_name,jdbcType=VARCHAR},
+			</if>
+			<if test="null != c_sex and !&quot;&quot;.equals(c_sex.trim())">  
+                #{c_sex,jdbcType=VARCHAR},
+            </if>          
+            
+            <if test="null != c_phone and !&quot;&quot;.equals(c_phone.trim())">  
+                #{c_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_address and !&quot;&quot;.equals(c_address.trim())">  
+                #{c_address,jdbcType=VARCHAR},
+            </if>
+          <if test="null != c_email and !&quot;&quot;.equals(c_email.trim())">  
+                  #{c_email,jdbcType=VARCHAR},
+            </if>
+			   <if test="null != c_nation and !&quot;&quot;.equals(c_nation.trim())">  
+                 #{c_nation,jdbcType=VARCHAR},
+            </if> 
+			   
+            
+            <if test="null != c_age and !&quot;&quot;.equals(c_age.trim())">  
+               #{c_age,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_qq and !&quot;&quot;.equals(c_qq.trim())">  
+                #{c_qq,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_dept and !&quot;&quot;.equals(c_dept.trim())">  
+               #{c_dept,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_duty and !&quot;&quot;.equals(c_duty.trim())">  
+                #{c_duty,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_salary and !&quot;&quot;.equals(c_salary.trim())">  
+                #{c_salary,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_card and !&quot;&quot;.equals(c_card.trim())">  
+                #{c_card,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_bank and !&quot;&quot;.equals(c_bank.trim())">  
+                #{c_bank,jdbcType=VARCHAR},
+            </if>
+             <if test="null != c_bankid and !&quot;&quot;.equals(c_bankid.trim())">  
+                #{c_bankid,jdbcType=VARCHAR}
+            </if>
+		</trim>
+	</insert>
+	
+	<!-- 删除一行emp信息表 -->
+	<update id="deleteRow" parameterType="java.util.Map">
+ 		DELETE From common where c_id = #{deleteId,jdbcType=INTEGER}
+ 	</update>
+ 	
+ 	<!-- 修改一行emp信息表 -->
+ 	<update id="updateRow" parameterType="java.util.Map" >
+    	update common
+	    <set>
+			
+				c_name=#{c_name,jdbcType=VARCHAR},
+			
+			<if test="null != c_sex and !&quot;&quot;.equals(c_sex.trim())">  
+                c_sex=#{c_sex,jdbcType=VARCHAR},
+            </if>          
+            
+            <if test="null != c_phone and !&quot;&quot;.equals(c_phone.trim())">  
+                c_phone=#{c_phone,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_address and !&quot;&quot;.equals(c_address.trim())">  
+               c_address= #{c_address,jdbcType=VARCHAR},
+            </if>
+          <if test="null != c_email and !&quot;&quot;.equals(c_email.trim())">  
+                 c_email= #{c_email,jdbcType=VARCHAR},
+            </if>
+			<if test="null != c_nation and !&quot;&quot;.equals(c_nation.trim())">  
+                c_nation= #{c_nation,jdbcType=VARCHAR},
+            </if> 
+			   
+            
+            <if test="null != c_age and !&quot;&quot;.equals(c_age.trim())">  
+               c_age=#{c_age,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_qq and !&quot;&quot;.equals(c_qq.trim())">  
+                c_qq= #{c_qq,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_dept and !&quot;&quot;.equals(c_dept.trim())">  
+                c_dept= #{c_dept,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_duty and !&quot;&quot;.equals(c_duty.trim())">  
+                c_duty= #{c_duty,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_salary and !&quot;&quot;.equals(c_salary.trim())">  
+                c_salary= #{c_salary,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_card and !&quot;&quot;.equals(c_card.trim())">  
+                c_card= #{c_card,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_bank and !&quot;&quot;.equals(c_bank.trim())">  
+                c_bank= #{c_bank,jdbcType=VARCHAR},
+            </if>
+            <if test="null != c_bankid and !&quot;&quot;.equals(c_bankid.trim())">  
+                c_bankid= #{c_bankid,jdbcType=VARCHAR},
+            </if>
+            
+            
+            
+            
+            
+	    </set>
+	    where c_id = #{updateId,jdbcType=INTEGER}
+	    <!--  
+	    <choose>
+		    <when test="updateId instanceof Integer">
+	 		where iId = #{updateId,jdbcType=INTEGER}
+	 		</when>
+	 		<otherwise>
+	 		where iId in 
+		   	<foreach collection="updateId" item="item" open="(" separator="," close=")">
+		 	#{item}
+		 	</foreach>
+		 	</otherwise>
+	 	</choose>
+	 	-->
+  	</update>
+ 	
+	
+</mapper>
