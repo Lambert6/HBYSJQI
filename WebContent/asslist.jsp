@@ -47,7 +47,7 @@
 					</tr>
 				</thead>
 		<c:forEach items="${asslist}" var="map" varStatus="listStatus">
-			<tr class="success" style="margin-top: 2px;">
+			<tr class="warning" style="margin-top: 2px;">
 				<td>${map.a_id}</td>
 				<td>${map.a_name}</td>
 				<td>${map.a_sex}</td>

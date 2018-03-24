@@ -73,7 +73,7 @@
 					</tr>
 				</thead>
 		<c:forEach items="${outlist}" var="map" varStatus="listStatus">
-			<tr class="success" style="margin-top: 2px;">
+			<tr class="warning" style="margin-top: 2px;">
 				<td>${map.o_id}</td>
 				<td>${map.o_name}</td>
 				<td>${map.o_age}</td>

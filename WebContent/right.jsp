@@ -56,7 +56,7 @@
 			</tr>
 		</thead>
 		<c:forEach items="${emplist}" var="map" varStatus="listStatus">
-			<tr class="success" style="margin-top: 2px;">
+			<tr class="warning" style="margin-top: 2px;">
 				<td>${map.c_id}</td>
 				<td>${map.c_name}</td>
 				<td>${map.c_age}</td>
