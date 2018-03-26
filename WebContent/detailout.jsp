@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</tr>
 					
 					<tr class="danger">
-						<td><strong>房龄：</strong>&emsp;<span><c:out value="${o_age}"/></span></td>
+						<td><strong>房龄：</strong>&emsp;<span><c:out value="${o_nation}"/></span></td>
 						<td><strong>面积：</strong>&emsp;<span><c:out value="${o_qq}"/></span></td>
 						
 					</tr>
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						
 					</tr>
 					<tr class="danger">
-						<td><strong>经纪人电话：</strong>&emsp;<span><c:out value="${o_nation}"/></span></td>
+						<td><strong>经纪人电话：</strong>&emsp;<span><c:out value="${o_age}"/></span></td>
 						<td><strong>业主电话：</strong>&emsp;<span><c:out value="${o_salary}"/></span></td>
 						
 					</tr>

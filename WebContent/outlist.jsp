@@ -76,7 +76,7 @@
 			<tr class="warning" style="margin-top: 2px;">
 				<td>${map.o_id}</td>
 				<td>${map.o_name}</td>
-				<td>${map.o_age}</td>
+				<td>${map.o_nation}</td>	
 				<td>${map.o_sex}</td>
 				<td>${map.o_email}</td>
 				<td>${map.o_phone}</td>
@@ -86,9 +86,9 @@
 				<td>${map.o_duty}</td>
 				<td>${map.o_salary}</td>
 				<td>${map.o_card}</td>
-				<td>${map.o_nation}</td>			
+						
 				
-								
+					<td>${map.o_age}</td>			
 				<td>
 				
 				<button type="button" class="btn btn-info btn-xs" onclick='mydetails(this.parentNode.parentNode)'>详情</button>
