@@ -118,9 +118,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<label class="control-label col-sm-2" for="inputSuccess3">部门：</label>
 			<div class="col-sm-3">
 				<select name="c_dept" class="form-control" id="inputError1">
-					<option value="经纪人">经纪人</option>
-					<option value="理件处">理件处</option>
-					<option value="审理部">财务部</option>
+					<option value="销售部">销售部</option>
+					<option value="研发部">研发部</option>
+					<option value="财务部">财务部</option>
 					<option value="行政部">行政部</option>
 				</select>
 			</div>
